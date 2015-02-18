@@ -178,10 +178,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BA5356B1833A34300A5164D /* leapmotion.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				MACH_O_TYPE = mh_bundle;
-				SDKROOT = macosx;
 			};
 			name = Development;
 		};
@@ -189,10 +187,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BA5356B1833A34300A5164D /* leapmotion.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				GCC_OPTIMIZATION_LEVEL = fast;
+				GCC_OPTIMIZATION_LEVEL = s;
 				MACH_O_TYPE = mh_bundle;
-				SDKROOT = macosx;
 			};
 			name = Deployment;
 		};
@@ -200,6 +196,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BA5356B1833A34300A5164D /* leapmotion.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = external.plist;
@@ -211,6 +208,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BA5356B1833A34300A5164D /* leapmotion.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				INFOPLIST_FILE = external.plist;
