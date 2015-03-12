@@ -2,3 +2,4 @@ build/xcode/build
 build/xcode/leapmotion.xcodeproj/xcuserdata
 build/xcode/leapmotion.xcodeproj/project.xcworkspace
 LeapSDK
+*.zip
