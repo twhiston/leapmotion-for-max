@@ -138,7 +138,7 @@ void leapmotion_bang(t_leapmotion *x)
         const int32_t hand_id = hand.id();
 		
 		const Leap::FingerList &fingers = hand.fingers();
-		const size_t numFingers = fingers.count();
+		const size_t numFingers = fingers.extended().count();
 		
 		t_atom hand_data[11];
 		atom_setlong(hand_data, hand_id);
