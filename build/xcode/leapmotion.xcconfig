@@ -13,21 +13,21 @@
 // ----------------------------------
 
 // Leap Motion SDK
-LEAP_SDK_DIR = $(PROJECT_DIR)/../../LeapSDK
+LEAP_SDK_DIR = $(PROJECT_DIR)/../../../LeapSDK
 LIBRARY_SEARCH_PATHS = $(LEAP_SDK_DIR)/lib
 
 // PATHS TO MAX FRAMEWORK/SDK
-MAX_FRAMEWORK_DIR=../../../__SDKs__/MaxSDK-6.1.4/c74support
+MAX_FRAMEWORK_DIR = $(PROJECT_DIR)/../../../max-sdk-8.0.3/source/c74support
 MAX_HEADERS_DIR = $(MAX_FRAMEWORK_DIR)/max-includes
 MSP_HEADERS_DIR = $(MAX_FRAMEWORK_DIR)/msp-includes
 JIT_HEADERS_DIR = $(MAX_FRAMEWORK_DIR)/jit-includes
 
-HEADER_SEARCH_PATHS = $(MAX_HEADERS_DIR) $(MSP_HEADERS_DIR) $(JIT_HEADERS_DIR)
+HEADER_SEARCH_PATHS = $(MAX_HEADERS_DIR) $(MSP_HEADERS_DIR) $(JIT_HEADERS_DIR) $(LEAP_SDK_DIR)/include
 FRAMEWORK_SEARCH_PATHS = "$(MAX_FRAMEWORK_DIR)/max-includes" "$(MAX_FRAMEWORK_DIR)/msp-includes" "$(MAX_FRAMEWORK_DIR)/jit-includes"
 
 // Install Directory
 DSTROOT = $(PROJECT_DIR)/../../
-INSTALL_PATH = /
+INSTALL_PATH = /packages/leapmotion-for-max/externals
 
 // ----------------------------------
 // END: NEED CHANGES
@@ -54,12 +54,12 @@ OTHER_LDFLAGS = -framework MaxAPI
 
 SDKROOT = macosx
 
-MACOSX_DEPLOYMENT_TARGET = 10.6
+MACOSX_DEPLOYMENT_TARGET = 10.14
 
 C74_SYM_LINKER_FLAGS = @$(MAX_FRAMEWORK_DIR)/max-includes/c74_linker_flags.txt
 
 GCC_PREPROCESSOR_DEFINITIONS = "DENORM_WANT_FIX = 1" "NO_TRANSLATION_SUPPORT = 1" "MAX61" "USE_PTHREAD"
 
-OTHER_CFLAGS = -fvisibility=hidden
+OTHER_CFLAGS = -fvisibility=hidden -stdlib=libc++
 
 OTHER_LDFLAGS = $(C74_SYM_LINKER_FLAGS)
